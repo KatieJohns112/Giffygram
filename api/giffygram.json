@@ -1,0 +1,19 @@
+{
+	"users": [
+        {
+            "id": 1,
+            "name": "katie",
+            "dateJoined":1630513684989,
+            "email": "katielong112@gmail.com"
+        },
+        {
+            "id": 2,
+            "name": "katie",
+            "dateJoined":1630513684989,
+            "email": "katielong112@gmail.com"
+        }
+
+    ],
+	"posts": [],
+	"messages":[]
+}
