@@ -25,3 +25,9 @@ export const getUsers = () => {
     .then(response => response.json())
 }
 // logged in user and new user end info
+
+export const getPosts = () => {
+    return fetch("http://localhost:8088/posts")
+    .then(response => response.json())
+}
+

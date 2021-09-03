@@ -8,12 +8,44 @@
         },
         {
             "id": 2,
-            "name": "katie",
+            "name": "josh",
             "dateJoined":1630513684989,
-            "email": "katielong112@gmail.com"
+            "email": "joshjohns@outlook.com"
+        },
+        {   
+            "id": 3,
+            "name": "tori",
+            "dateJoined":1630513684989,
+            "email": "torimassie@gmail.com"
+        },
+        {
+            "id": 4,
+            "name": "ryan",
+            "dateJoined":1630513684989,
+            "email": "ryanjohns@outlook.com"
+        },
+        {
+            "id": 5,
+            "name": "amanda",
+            "dateJoined":1630513684989,
+            "email": "amandawarner@gmail.com"
         }
 
     ],
-	        "posts": [],
+	        "posts": [
+                {
+                    "id":1,
+                    "userId":1,
+                    "title":"This is so funny",
+                    "imageURL":"https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif"
+                },
+                {
+                    "id":2,
+                    "userId":2,
+                    "title":"This is so funny",
+                    "imageURL":"https://media.giphy.com/media/GpyS1lJXJYupG/giphy.gif"
+                }
+
+            ],
 	        "messages":[]
 }

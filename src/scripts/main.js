@@ -1,49 +1,56 @@
-import { getJokes, getUsers } from "../data/DataManager.js";
-import { joke } from "../data/jokesData.js";
-
-getJokes() 
-.then(apiJoke => {
-    console.log("apiJoke", apiJoke)
-    const jokeElement = document.querySelector(".jokeBody");
-    jokeElement.innerHTML = joke(apiJoke)
-
-})
-
-//  const allUsers = getUsers().then(apiUsers => {
-//      console.log("now we can console the users", apiUsers)
-// })
-
-// console.log("allUsers", allUsers);
-
-// const contentElementJoke = document.querySelector("joke");
-
-// getJokes().then(apiJoke => {
-//     contentElementJoke.innerHTML += getJokes(apiJoke);
-// })
-
-/**
- * Main logic module for what should happen on initial page load for Giffygram
- */
-
-/*
-    This function performs one, specific task.
-
-    1. Can you explain what that task is?
-    2. Are you defining the function here or invoking it?
-*/
-
-
-const startGiffyGram = () => {
-    const postElement = document.querySelector(".postList");
-	postElement.innerHTML = "Hello Cohort 51"
-}
-// Are you defining the function here or invoking it?
-startGiffyGram();
 
 getUsers()
 .then(data => {
     console.log("User Data", data)
 })
 
+import { getPosts, getUsers } from "../data/DataManager.js"
+import { PostList } from "./feed/PostList.js"
+import { NavBar } from "./nav/NavBar.js"
 
+const showPostList = () => {
+	//Get a reference to the location on the DOM where the list will display
+	const postElement = document.querySelector(".postList");
+	getPosts().then((allPosts) => {
+		postElement.innerHTML = PostList(allPosts);
+	})
+}
+
+const showNavBar = () => {
+    //Get a reference to the location on the DOM where the nav will display
+    const navElement = document.querySelector("nav");
+	navElement.innerHTML = NavBar();
+}
+const applicationElement = document.querySelector(".giffygram");
+
+applicationElement.addEventListener("click", event => {
+    console.log("what was clicked", event.target)
+	if (event.target.id === "logout"){
+		console.log("You clicked on logout")
+	}
+})
+
+applicationElement.addEventListener("click", (event) => {
+	
+	if (event.target.id.startsWith("edit")){
+		console.log("post clicked", event.target.id.split("--"))
+		console.log("the id is", event.target.id.split("--")[1])
+	}
+})
+
+applicationElement.addEventListener("change", event => {
+    if (event.target.id === "yearSelection") {
+      const yearAsNumber = parseInt(event.target.value)
+      console.log(`User wants to see posts since ${yearAsNumber}`)
+      //invoke a filter function passing the year as an argument
+      showFilteredPosts(yearAsNumber);
+    }
+  })
+
+const startGiffyGram = () => {
+	showPostList();
+    showNavBar();
+}
+
+startGiffyGram();
 
