@@ -1,89 +1,102 @@
 {
-	"users": [
-        {
-            "id": 1,
-            "name": "katie",
-            "dateJoined":1630513684989,
-            "email": "katielong112@gmail.com"
-        },
-        {
-            "id": 2,
-            "name": "josh",
-            "dateJoined":1630513684989,
-            "email": "joshjohns@outlook.com"
-        },
-        {   
-            "id": 3,
-            "name": "tori",
-            "dateJoined":1630513684989,
-            "email": "torimassie@gmail.com"
-        },
-        {
-            "id": 4,
-            "name": "ryan",
-            "dateJoined":1630513684989,
-            "email": "ryanjohns@outlook.com"
-        },
-        {
-            "id": 5,
-            "name": "amanda",
-            "dateJoined":1630513684989,
-            "email": "amandawarner@gmail.com"
-        }
-
-    ],
-	        "posts": [
-                {
-                    "id":1,
-                    "userId":1,
-                    "title":"This is so funny",
-                    "timestamp":"01/14/2020",
-                    "imageURL":"https://media.giphy.com/media/hpSOjkcvhDgbv9p92R/giphy.gif"
-                },
-                {
-                    "id":2,
-                    "userId":2,
-                    "title":"This is so funny",
-                    "timestamp":"01/14/2019",
-                    "imageURL":"https://media.giphy.com/media/S9i8jJxTvAKVHVMvvW/giphy.gif"
-                },
-                {
-                    "id":3,
-                    "userId":3,
-                    "title":"This is so funny",
-                    "timestamp":"01/14/2018",
-                    "imageURL":"https://media.giphy.com/media/vc0KiL9PrHzLMZpjyh/giphy.gif"
-                },
-                {
-                    "id":4,
-                    "userId":4,
-                    "title":"This is so funny",
-                    "timestamp":"01/14/2017",
-                    "imageURL":"https://media.giphy.com/media/LrztroFsKqhu8TViLW/giphy.gif"
-                },
-                {
-                    "id":5,
-                    "userId":5,
-                    "title":"This is so funny",
-                    "timestamp":"01/14/2016",
-                    "imageURL":"https://media.giphy.com/media/qeAVCeUwLavsP6JD61/giphy.gif"
-                },
-                {
-                    "id":6,
-                    "userId":6,
-                    "title":"This is so funny",
-                    "timestamp":"01/14/2015",
-                    "imageURL":"https://media.giphy.com/media/O5DSJwufJ9qIxTxifk/giphy.gif"
-                },
-                {
-                    "id":7,
-                    "userId":7,
-                    "title":"This is so funny",
-                    "timestamp":"01/14/2014",
-                    "imageURL":"https://media.giphy.com/media/6R5EHzwH9HTsDBHr8E/giphy.gif"
-                }
-
-
-            ],
-	        "messages":[]
+  "users": [
+    {
+      "id": 1,
+      "name": "katie",
+      "dateJoined": 1630513684989,
+      "email": "katielong112@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "josh",
+      "dateJoined": 1630513684989,
+      "email": "joshjohns@outlook.com"
+    },
+    {
+      "id": 3,
+      "name": "tori",
+      "dateJoined": 1630513684989,
+      "email": "torimassie@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "ryan",
+      "dateJoined": 1630513684989,
+      "email": "ryanjohns@outlook.com"
+    },
+    {
+      "id": 5,
+      "name": "amanda",
+      "dateJoined": 1630513684989,
+      "email": "amandawarner@gmail.com"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "This is so funny",
+      "timestamp": 1555390800000,
+      "imageURL": "https://media.giphy.com/media/hpSOjkcvhDgbv9p92R/giphy.gif"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "title": "This is so funny",
+      "timestamp": 1587013200000,
+      "imageURL": "https://media.giphy.com/media/S9i8jJxTvAKVHVMvvW/giphy.gif"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "title": "This is so funny",
+      "timestamp": 1523854800000,
+      "imageURL": "https://media.giphy.com/media/vc0KiL9PrHzLMZpjyh/giphy.gif"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "title": "This is so funny",
+      "timestamp": 1523854748000,
+      "imageURL": "https://media.giphy.com/media/LrztroFsKqhu8TViLW/giphy.gif"
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "title": "This is so funny",
+      "timestamp": 1587013200000,
+      "imageURL": "https://media.giphy.com/media/qeAVCeUwLavsP6JD61/giphy.gif"
+    },
+    {
+      "id": 6,
+      "userId": 6,
+      "title": "This is so funny",
+      "timestamp": 555390800000,
+      "imageURL": "https://media.giphy.com/media/O5DSJwufJ9qIxTxifk/giphy.gif"
+    },
+    {
+      "id": 7,
+      "userId": 7,
+      "title": "This is so funny",
+      "timestamp": 1523854800000,
+      "imageURL": "https://media.giphy.com/media/6R5EHzwH9HTsDBHr8E/giphy.gif"
+    },
+    {
+      "title": "",
+      "imageURL": "https://media.giphy.com/media/DRNHiOI54DlW3MBO30/giphy.gif",
+      "description": "This is so funny",
+      "userId": 1,
+      "timestamp": 1631129093744,
+      "id": 8
+    },
+    {
+      "title": "This is so funny",
+      "imageURL": "https://media.giphy.com/media/76Nahzjx4Y6WXP2APE/giphy.gif",
+      "description": "",
+      "userId": 1,
+      "timestamp": 1631130160661,
+      "id": 9
+    }
+  ],
+  "messages": []
 }
