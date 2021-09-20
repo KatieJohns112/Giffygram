@@ -33,18 +33,12 @@
   ],
   "posts": [
     {
-      "id": 1,
+      "title": "hilarious",
+      "imageURL": "https://media.giphy.com/media/hpSOjkcvhDgbv9p92R/giphy.gif",
+      "description": "undefined",
       "userId": 1,
-      "title": "This is so funny",
       "timestamp": 1555390800000,
-      "imageURL": "https://media.giphy.com/media/hpSOjkcvhDgbv9p92R/giphy.gif"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "title": "This is so funny",
-      "timestamp": 1587013200000,
-      "imageURL": "https://media.giphy.com/media/S9i8jJxTvAKVHVMvvW/giphy.gif"
+      "id": 1
     },
     {
       "id": 3,
@@ -66,28 +60,6 @@
       "title": "This is so funny",
       "timestamp": 1587013200000,
       "imageURL": "https://media.giphy.com/media/qeAVCeUwLavsP6JD61/giphy.gif"
-    },
-    {
-      "id": 6,
-      "userId": 6,
-      "title": "This is so funny",
-      "timestamp": 555390800000,
-      "imageURL": "https://media.giphy.com/media/O5DSJwufJ9qIxTxifk/giphy.gif"
-    },
-    {
-      "id": 7,
-      "userId": 7,
-      "title": "This is so funny",
-      "timestamp": 1523854800000,
-      "imageURL": "https://media.giphy.com/media/6R5EHzwH9HTsDBHr8E/giphy.gif"
-    },
-    {
-      "title": "",
-      "imageURL": "https://media.giphy.com/media/DRNHiOI54DlW3MBO30/giphy.gif",
-      "description": "This is so funny",
-      "userId": 1,
-      "timestamp": 1631129093744,
-      "id": 8
     },
     {
       "title": "This is so funny",
