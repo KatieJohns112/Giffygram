@@ -4,7 +4,7 @@ getUsers()
     console.log("User Data", data)
 })
 
-import { getPosts, getUsers, usePostCollection, createPost, deletePost, getSinglePost, updatePost, getLoggedInUser, logoutUser, setLoggedInUser, loginUser } from "../data/DataManager.js"
+import { getPosts, getUsers, usePostCollection, createPost, deletePost, getSinglePost, updatePost, getLoggedInUser, logoutUser, setLoggedInUser, loginUser,postLike } from "../data/DataManager.js"
 import { PostList } from "./feed/PostList.js"
 import { NavBar } from "./nav/NavBar.js"
 import { PostEntry } from "./feed/PostEntry.js"
@@ -92,6 +92,20 @@ applicationElement.addEventListener("click", (event) => {
 		// console.log("the id is", event.target.id.split("--")[1])
 	}
 })
+
+applicationElement.addEventListener("click", event => {
+	event.preventDefault();
+	if (event.target.id.startsWith("like")) {
+	  const likeObject = {
+		 postId: parseInt(event.target.id.split("__")[1]),
+		 userId: getLoggedInUser().id
+	  }
+	  postLike(likeObject)
+		.then(response => {
+		  showPostList();
+		})
+	}
+  })
 
   applicationElement.addEventListener("change", event => {
 	if (event.target.id === "yearSelection") {
