@@ -9,16 +9,35 @@ export const getJokes = () => {
 
 }
 // logged in user and new user info
-const loggedInUser = {
-	id: 1,
-	name: "Katie",
-    datejoined: 38874893,
-	email: "katielong112@gmail.com"
-}
+let loggedInUser = {}
+
+export const logoutUser = () => {
+    loggedInUser = {}
+  }
 
 export const getLoggedInUser = () => {
 	return loggedInUser;
 }
+
+export const setLoggedInUser = (userObj) => {
+    loggedInUser = userObj;
+  }
+
+  export const loginUser = (userObj) => {
+    return fetch(`http://localhost:8088/users?name=${userObj.name}&email=${userObj.email}`)
+    .then(response => response.json())
+    .then(parsedUser => {
+      //is there a user?
+      console.log("parsedUser", parsedUser) //data is returned as an array
+      if (parsedUser.length > 0){
+        setLoggedInUser(parsedUser[0]);
+        return getLoggedInUser();
+      }else {
+        //no user
+        return false;
+      }
+    })
+  }
 
 export const getUsers = () => {
     return fetch("http://localhost:8088/users")

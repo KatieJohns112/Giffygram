@@ -4,11 +4,13 @@ getUsers()
     console.log("User Data", data)
 })
 
-import { getPosts, getUsers, usePostCollection, createPost, deletePost, getSinglePost, updatePost, getLoggedInUser } from "../data/DataManager.js"
+import { getPosts, getUsers, usePostCollection, createPost, deletePost, getSinglePost, updatePost, getLoggedInUser, logoutUser, setLoggedInUser, loginUser } from "../data/DataManager.js"
 import { PostList } from "./feed/PostList.js"
 import { NavBar } from "./nav/NavBar.js"
 import { PostEntry } from "./feed/PostEntry.js"
 import { PostEdit } from "./feed/PostEdit.js"
+import { LoginForm } from "./auth/LoginForm.js"
+import { RegisterForm } from "./auth/RegistrationForm.js"
 
 
 const showPostList = () => {
@@ -30,6 +32,25 @@ const showPostEntry = () => {
 	const entryElement = document.querySelector(".entryForm");
 	entryElement.innerHTML = PostEntry();
   }
+
+  const checkForUser = () => {
+	if (sessionStorage.getItem("user")){
+		setLoggedInUser(JSON.parse(sessionStorage.getItem("user")));
+	  startGiffyGram();
+	}else {
+		 showLoginRegister();
+	}
+}
+
+const showLoginRegister = () => {
+	showNavBar();
+	const entryElement = document.querySelector(".entryForm");
+	//template strings can be used here too
+	entryElement.innerHTML = `${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
+	//make sure the post list is cleared out too
+  const postElement = document.querySelector(".postList");
+  postElement.innerHTML = "";
+}
  
 const applicationElement = document.querySelector(".giffygram");
 const footerElement = document.querySelector(".footer");
@@ -101,6 +122,43 @@ applicationElement.addEventListener("click", (event) => {
 		})
 	}
   })
+
+
+
+//   const checkForUser = () => {
+// 	if (sessionStorage.getItem("user")){
+// 	  //this is expecting an object. Need to fix
+// 		setLoggedInUser(JSON.parse(sessionStorage.getItem("user")));
+// 	  startGiffyGram();
+// 	}else {
+// 	  //show login/register
+// 	  console.log("showLogin")
+// 	}
+//   }
+
+applicationElement.addEventListener("click", event => {
+	event.preventDefault();
+	if (event.target.id === "login__submit") {
+	  //collect all the details into an object
+	  const userObject = {
+		name: document.querySelector("input[name='name']").value,
+		email: document.querySelector("input[name='email']").value
+	  }
+	  loginUser(userObject)
+	  .then(dbUserObj => {
+		if(dbUserObj){
+		  sessionStorage.setItem("user", JSON.stringify(dbUserObj));
+		  startGiffyGram();
+		}else {
+		  //got a false value - no user
+		  const entryElement = document.querySelector(".entryForm");
+		  entryElement.innerHTML = `<p class="center">That user does not exist. Please try again or register for your free account.</p> ${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
+		}
+	  })
+	}
+  })
+
+
   
   applicationElement.addEventListener("click", event => {
 	event.preventDefault();
@@ -124,6 +182,13 @@ applicationElement.addEventListener("click", (event) => {
 		.then(dbResponse => {
 			showPostList()
 		});
+	}
+  })
+
+  applicationElement.addEventListener("click", event => {
+	if (event.target.id === "logout") {
+	  logoutUser();
+	  console.log(getLoggedInUser());
 	}
   })
 
@@ -171,5 +236,5 @@ const startGiffyGram = () => {
     showNavBar();
 }
 
-startGiffyGram();
+checkForUser();
 
