@@ -66,8 +66,29 @@
       "description": "",
       "userId": 1,
       "timestamp": 1631130160661,
-      "id": 9
+      "id": 6
     }
   ],
-  "messages": []
+  "userLikes": [
+    {
+      "postId": "6",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "postId": 1,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "postId": 1,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "postId": 1,
+      "userId": 1,
+      "id": 4
+    }
+  ]
 }
